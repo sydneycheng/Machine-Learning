@@ -12,8 +12,7 @@ print(nyc.Date.values.reshape(-1,1))
 
 
 X_train, X_test, y_train, y_test = train_test_split(
-    nyc.Date.values.reshape(-1,1),nyc.Temperature.values, random_state = 11
-)
+    nyc.Date.values.reshape(-1,1),nyc.Temperature.values, random_state = 11)
 
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
@@ -23,7 +22,7 @@ lr.fit(X=X_train, y=y_train)
 coef = lr.coef_
 intercept = lr.intercept_
 
-predicted = lr.predicted(X_test)
+predicted = lr.predict(X_test)
 expected = y_test
 
 print(predicted[:20])
