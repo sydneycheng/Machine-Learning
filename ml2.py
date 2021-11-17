@@ -10,7 +10,7 @@ print(nyc.head(3))
 print(nyc.Date.values)
 print(nyc.Date.values.reshape(-1,1))
 
-
+'''
 X_train, X_test, y_train, y_test = train_test_split(
     nyc.Date.values.reshape(-1,1),nyc.Temperature.values, random_state = 11)
 
@@ -60,3 +60,4 @@ import matplotlib.pyplot as plt
 line = plt.plot(x,y)
 
 plt.show()
+'''

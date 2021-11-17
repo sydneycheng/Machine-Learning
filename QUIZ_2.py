@@ -1,23 +1,37 @@
-# These files contain data for video game ratings given out by the ESRB.
-# Both files contain 34 features. 32 of these contribute to the ESRB's
-# assigned rating. The data has already been split into a train and a test
-# file for you to use to train and test your model. Your goal is to create
-# a model that will take the 32 features for each game and predict a rating.
-# Keep in mind that the final output should be the name of the target rating
-# and not the number. Please refer to this file which should match your output.
 import pandas as pd
-from sklearn.neighbors import KNeighborsClassifier
 
 # Using methods covered in class:
 
 # 1) load the dataset and use the KNeighborsClassifier to train and test your model
-dataset = pd.read_csv("gameratings.csv")
+
+#load dataset
+train = pd.read_csv("gameratings.csv")
+test = pd.read_csv("test_esrb.csv")
+
+data_train, data_test, target_train, target_test = train, test, train.Target, test.Target
+
+print(data_train.shape)
+print(target_train.shape)
+print(data_test.shape)
+print(target_test.shape)
+
+#use KNeighborsClassifier to train and test model
+from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier()
 knn.fit(X=data_train, y=target_train)
 
+predicted = knn.predict(X=data_test)
+expected = target_test
+print(predicted[:20])
+print(expected[:20])
 
 
 # 2) Display all wrong predicted and expected pairs
+
+#see which ones the machine got wrong
+wrong = [(p,e) for (p,e) in zip(predicted, expected) if p != e]
+print(wrong)
+
 
 # 3) produce a csv file of the name of the game and the predicted rating
