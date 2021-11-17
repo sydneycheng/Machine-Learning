@@ -27,6 +27,7 @@ print(predicted[:20])
 print(expected[:20])
 
 
+
 # 2) Display all wrong predicted and expected pairs
 
 #see which ones the machine got wrong
@@ -35,4 +36,9 @@ print(wrong)
 
 
 # 3) produce a csv file of the name of the game and the predicted rating
-mypredictions = pd.write_csv("my_predictons.csv")
+
+# target_names = pd.read_csv("target_names.csv")
+# if target_names.target_class == "1":
+
+
+# mypredictions = pd.write_csv("my_predictons.csv")
