@@ -13,7 +13,6 @@ from sklearn.model_selection import train_test_split
 iris = load_iris()
 
 
-
 # display the shape of the data, target and target_names
 # print(iris.data.shape)
 # print(iris.target.shape)
