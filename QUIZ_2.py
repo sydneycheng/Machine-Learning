@@ -35,3 +35,4 @@ print(wrong)
 
 
 # 3) produce a csv file of the name of the game and the predicted rating
+mypredictions = pd.write_csv("my_predictons.csv")
